@@ -56,3 +56,10 @@ address{
 .navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
     color:#000000;
 }
+
+.menu-image{
+    width:150px;
+    height:150px;
+    margin: 0px auto;
+
+}
