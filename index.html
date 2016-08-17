@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0077)https://d396qusza40orc.cloudfront.net/phoenixassets/web-frameworks/index.html -->
-<html lang="en" ng-app="conFusionApp">
+<html lang="en" ng-app="secretrecipeApp">
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <meta charset="utf-8">
@@ -14,6 +14,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="css/mystyle.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/bootstrap-social.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,7 +47,7 @@
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                     </button>
-                                    <a class="navbar-brand" href="#">Conny's Kitchen</a>
+                                    <a class="navbar-brand" href="#">Secret Recipe</a>
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -81,7 +83,7 @@
                 <div class="row">
 
                     <div class="col-xs-12 col-sm-8">
-                        <h1>Ristorante con Fusion</h1>
+                        <h1>Secret Recipe</h1>
                         <p style="padding:40px;"></p>
                         <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
 
@@ -99,8 +101,8 @@
     <div class="container">
         <div  ng-controller="menuController as menuCtrl">
                 <div class="row" ng-repeat="dish in menuCtrl.dishes">
-                    <div class="col-xs-12 col-sm-3">
-                        <p style="padding:20px;"></p>
+                    <div class="col-xs-12 col-sm-3 thumbnail">
+                        <!--<p style="padding:20px;"></p>-->
                         <!--<h3 align="center">{{dish.title}}</h3>-->
                          <!--<div style="background:url('images/{{dish.image}}') no-repeat center center; width:150px; height:150px;float:left;"></div>-->
                         <img src="images/{{dish.image}}" class="menu-image" />
@@ -164,27 +166,28 @@
                 <div class="col-xs-5 col-xs-offset-1 col-sm-3 col-sm-offset-1">
                     <h5>Our Address</h5>
                     <address>
-		              121, Clear Water Bay Road<br>
-		              Clear Water Bay, Kowloon<br>
-		              HONG KONG<br>
-		              Tel.: +852 1234 5678<br>
-		              Fax: +852 8765 4321<br>
-		              Email: <a href="mailto:confusion@food.net">confusion@food.net</a>
+		              117 Albion Street<br>
+		              Brunswick<br>
+		              VIC<br>
+                        Australia<br>
+		              <i class="fa fa-phone"></i>&nbsp;Tel.: +61 403169716<br>
+		              <i class="fa fa-fax"></i>&nbsp;Fax: +61 99999999<br>
+		              <i class="fa fa-envelope"></i>&nbsp;Email: <a href="mailto:connyyang097@gmail.com">connyyang097@gmail.com</a>
 		           </address>
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                    <div style="padding: 40px 10px;">
-                        <a href="http://google.com/+">Google+</a>
-                        <a href="http://www.facebook.com/profile.php?id=">Facebook</a>
-                        <a href="http://www.linkedin.com/in/">LinkedIn</a>
-                        <a href="http://twitter.com/">Twitter</a>
-                        <a href="http://youtube.com/">YouTube</a>
-                        <a href="mailto:">Mail</a>
+                    <div class="nav navbar-nav" style="padding: 40px 10px;">
+                        <a class="btn btn-social-icon btn-google-plus" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:connyyang097@gmail.com"><i class="fa fa-envelope-o"></i></a>
                     </div>
                 </div>
                 <div class="col-xs-12">
                     <p style="padding:10px;"></p>
-                    <p align="center">© Copyright 2015 Ristorante Con Fusion</p>
+                    <p align="center">© Copyright 2016 Secret Recipe</p>
                 </div>
             </div>
         </div>
@@ -197,7 +200,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://use.fontawesome.com/e9f320bb07.js"></script>
     <script>
-        var app = angular.module("conFusionApp",[]);
+        var app = angular.module("secretrecipeApp",[]);
 
         app.controller('menuController',function(){
             var dishes=[
