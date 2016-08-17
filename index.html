@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head
          content must come *after* these tags -->
 
-    <title>Conny's Kitchen</title>
+    <title>Secret Recipe</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
@@ -22,6 +22,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
     <![endif]-->
 
 
@@ -34,10 +35,11 @@
         <!-- Main component for a primary marketing message or call to action -->
 
         <div class="jumbotron">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12">
-                        <nav class="navbar navbar-inverse navbar-fixed-top">
+                        <!--<div style="background:#000000;">test</div>-->
+                        <nav class="navbar navbar-inverse navbar-static-top">
                             <div class="container-fluid">
                                 <!-- Brand and toggle get grouped for better mobile display -->
                                 <div class="navbar-header">
@@ -54,7 +56,7 @@
                                 <div class="collapse navbar-collapse" id="bs-home-navbar-collapse-1">
                                     <ul class="nav navbar-nav">
                                         <li class="active"><a href="#"><i class="fa fa-home fa-fw"></i>&nbsp;Home</a></li>
-                                        <li><a href="#">About</a></li>
+                                        <li><a href="#"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;About</a></li>
                                         <li><a href="#">Link</a></li>
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -80,17 +82,43 @@
                         </nav>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" ng-controller="bannerController as bannerCtrl">
 
-                    <div class="col-xs-12 col-sm-8">
-                        <h1>Secret Recipe</h1>
-                        <p style="padding:40px;"></p>
-                        <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
+                    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">
+                        <!-- Loading Screen -->
+                        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+                            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                            <div style="position:absolute;display:block;background:url('images/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+                        </div>
+                        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+                            <div data-p="225.00" style="display: none;" ng-repeat="banner in bannerCtrl.banners">
+                                    <img data-u="image" src="images/{{banner.image}}" />
+                                    <div style="position: absolute; top: 30px; left: 30px; width: 35%; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;">{{banner.caption_name}}</div>
+                                    <div style="position: absolute; top: 300px; left: 30px; width: 35%; height: 120px; font-size: 20px; color: #ffffff; line-height: 33px;">{{banner.caption_description}}
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <!-- Bullet Navigator -->
+                            <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+                                <!-- bullet navigator item prototype -->
+                                <div data-u="prototype" style="width:16px;height:16px;"></div>
+                            </div>
+                            <!-- Arrow Navigator -->
+                            <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
+                            <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
+                        </div>
+
+
+
+                        <!--<h1>Secret Recipe</h1>-->
+                        <!--<p style="padding:40px;"></p>-->
+                        <!--<p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>-->
 
                     </div>
-                   <div class="col-xs-12 col-sm-4">
 
-                   </div>
                 </div>
                 <div>
                 </div>
@@ -199,6 +227,14 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://use.fontawesome.com/e9f320bb07.js"></script>
+    <script src="js/jssor.slider-21.1.5.min.js"></script>
+    <script src="js/myjs.js"></script>
+    <script>
+        $(document).ready(function(){
+            jssor_1_slider_init();
+        });
+
+    </script>
     <script>
         var app = angular.module("secretrecipeApp",[]);
 
@@ -218,6 +254,30 @@
                 }
             ];
             this.dishes = dishes;
+        });
+
+        app.controller('bannerController',function(){
+            var banners = [
+                {
+                    image:"rack_of_lamb_with_peas.jpg",
+                    caption_name:"SECRET RECIPE",
+                    caption_description:"We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!",
+
+                },
+            {
+                image:"Scallop_and_Zuccini_Spaghettini.jpg",
+                caption_name:"SECRET RECIPE",
+                caption_description:"We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!",
+
+            },
+            {
+                image:"Mussels_with_Tomato_and_Parsley.jpg",
+                caption_name:"SECRET RECIPE",
+                caption_description:"We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!",
+
+            }
+            ];
+            this.banners = banners;
         });
     </script>
 </body></html>
