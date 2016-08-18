@@ -42,7 +42,7 @@
                     <li><a href="#"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>&nbsp;About</a></li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-text-o"></i>&nbsp;Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Appetizers</a></li>
                             <li><a href="#">Main Course</a></li>
@@ -52,7 +52,7 @@
 
                         </ul>
                     </li>
-                    <li class="active"><a href="contact.html">Contact</a></li>
+                    <li class="active"><a href="contact.html"><i class="fa fa-envelope-o"></i>&nbsp;Contact</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     <div class="form-group">
@@ -130,10 +130,11 @@
         
         <div class="row row-content">
            <div class="col-xs-12">
-              <h3>Location Information</h3> 
+
            </div>
             <div class="col-xs-12 col-sm-4 col-sm-offset-1">
-                   <h5>Our Address</h5>
+                <h3>Location Information</h3>
+                <h5>Our Address</h5>
                     <address style="font-size: 100%">
                         117 Albion Street<br>
                         Brunswick<br>
@@ -143,17 +144,17 @@
                         <i class="fa fa-fax"></i>&nbsp;Fax: +61 99999999<br>
                         <i class="fa fa-envelope"></i>&nbsp;Email: <a href="mailto:connyyang097@gmail.com">connyyang097@gmail.com</a>
                     </address>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-sm-offset-1">
-                <h5>Map of our Location</h5>
-            </div>
-            <div class="col-xs-12 col-sm-11 col-sm-offset-1">
                 <div class="btn-group" role="group" aria-label="...">
                     <a type="button" class="btn btn-primary" href="tel:+61403169716"><i class="fa fa-phone"></i> Call</a>
                     <a type="button" class="btn btn-info"><i class="fa fa-skype"></i> Skype</a>
                     <a type="button" class="btn btn-success" href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-7">
+                <!--<h5>Map of our Location</h5>-->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d788.5565828522793!2d144.96802390280348!3d-37.76129090776548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad64356f9fbde77%3A0x955ab8aa6886ff49!2s117+Albion+St%2C+Brunswick+VIC+3056!5e0!3m2!1sen!2sau!4v1471490532015" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+
         </div>
 
         <div class="row row-content">
@@ -161,7 +162,63 @@
               <h3>Send us your Feedback</h3> 
            </div>
             <div class="col-xs-12 col-sm-9">
-                Form goes here
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">First Name</label>                        <div class="col-sm-10">
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First Name">
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telnum" class="col-xs-12 col-sm-2 control-label">Contact Tel.</label>
+                        <div class="col-xs-5 col-sm-4 col-md-3">
+                            <div class="input-group">
+                                <div class="input-group-addon">(</div>
+                                <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="Area code">
+                                <div class="input-group-addon">)</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-7 col-sm-6 col-md-7">
+                            <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailid" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox col-sm-5 col-sm-offset-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="approve" value="">
+                                <strong>May we contact you?</strong>
+                            </label>
+                        </div>
+                        <div class="col-sm-3 col-sm-offset-1">
+                            <select class="form-control">
+                                <option>Tel.</option>
+                                <option>Email</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback" class="col-sm-2 control-label">Your Feedback</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="feedback" name="feedback" rows="12"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary">Send Feedback</button>
+                        </div>
+                    </div>
+                </form>
             </div>
              <div class="col-xs-12 col-sm-3">
                 <p style="padding:20px;"></p>
