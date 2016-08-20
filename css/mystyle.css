@@ -65,6 +65,19 @@ address{
 
 }
 
+.media-object{
+    width:150px;
+    height:150px;
+}
+
+.logo-xs{
+    height:30px;
+}
+
+.logo-lg{
+    height:80px;
+}
+
 .breadcrumb{
     background-color: #ffffff;
 }
