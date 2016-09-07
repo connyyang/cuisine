@@ -88,7 +88,7 @@
                         </div>
                         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
                             <div data-p="225.00" style="display: none;" ng-repeat="banner in bannerCtrl.banners">
-                                    <img data-u="image" src="images/{{banner.image}}" />
+                                    <img data-u="image" ng-src="images/{{banner.image}}" />
                                     <div style="position: absolute; top: 30px; left: 30px; width: 35%; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;"><img src="images/logo.png" class="logo-lg" /></div>
                                     <div style="position: absolute; top: 200px; left: 30px; width: 35%; height: 120px; font-size: 20px; color: #ffffff; line-height: 33px;"><p>{{banner.caption_description}}</p>
                                        <p><a class="btn btn-primary btn-lg" row="button" href="menu.html">Learn More</a></p>
@@ -130,7 +130,7 @@
                     <li class="media" ng-repeat="dish in menuCtrl.dishes">
                         <div class="media-left media-middle">
                             <a href="#">
-                                <img class="media-object img-thumbnail" src="images/{{dish.image}}" alt="{{dish.name}}">
+                                <img class="media-object img-thumbnail" ng-src="images/{{dish.image}}" alt="{{dish.name}}">
                             </a>
                         </div>
                         <div class="media-body">
