@@ -1,0 +1,27 @@
+{
+  "name": "cuisine",
+  "homepage": "https://github.com/connyyang/cuisine",
+  "authors": [
+    "connyyang <connyyang097@gmail.com>"
+  ],
+  "description": "Website for greate recipes",
+  "main": "index.html",
+  "keywords": [
+    "cuisine",
+    "secrete",
+    "recipes"
+  ],
+  "license": "connyyang",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "angular": "angularjs#^1.5.8"
+  }
+}
