@@ -71,6 +71,9 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<div ng-controller="bannerController">
+    This name is: {{banners | json}}
+</div>
     <header>
 
         <!-- Main component for a primary marketing message or call to action -->
@@ -79,6 +82,7 @@
             <div class="container-fluid">
 
                 <div class="row" ng-controller="bannerController as bannerCtrl">
+                    banners:$$$$ {{bannerCtrl.name}}
 
                     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden; visibility: hidden;">
                         <!-- Loading Screen -->
@@ -117,10 +121,9 @@
                     </div>
 
                 </div>
-                <div>
-                </div>
+
             </div>
-        </div>
+
     </header>
 
     <div class="container">
@@ -245,6 +248,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/mymenu.js"></script>
     <!--<script src="https://use.fontawesome.com/e9f320bb07.js"></script>-->
     <script src="js/jssor.slider-21.1.5.min.js"></script>
     <script src="js/myjs.js"></script>
@@ -254,51 +258,5 @@
         });
 
     </script>
-    <script>
-        var app = angular.module("secretrecipeApp",[]);
 
-        app.controller('menuController',function(){
-            var dishes=[
-                {
-                    title:"Our Lipsmacking Culinary Creations",
-                    name:"Crispy roast potatoes",
-                    description:"Brushing the potatoes with a mixture of olive oil and melted butter gives them a golden crust. Sprinkle them with flaked sea salt to enhance their flavour.",
-                    image:"crispy-roast-potatoes-13760_l.jpeg",
-                    link:"#"
-                },
-                {
-                    title:"This Month's Promotions",
-                    name:"Slow-cooked lamb and chunky vegetable stew",
-                    description:"Using forequarter chops makes this slow-cooked lamb and vegetable stew budget-friendly!",
-                    image:"slowcooked-lamb-and-chunky-vegetable-stew-22354_l.jpeg",
-                    link:"#"
-                }
-            ];
-            this.dishes = dishes;
-        });
-
-        app.controller('bannerController',function(){
-            var banners = [
-                {
-                    image:"rack_of_lamb_with_peas.jpg",
-                    caption_name:"SECRET RECIPE",
-                    caption_description:"We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!",
-
-                },
-            {
-                image:"Scallop_and_Zuccini_Spaghettini.jpg",
-                caption_name:"SECRET RECIPE",
-                caption_description:"We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!",
-
-            },
-            {
-                image:"Mussels_with_Tomato_and_Parsley.jpg",
-                caption_name:"SECRET RECIPE",
-                caption_description:"We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!",
-
-            }
-            ];
-            this.banners = banners;
-        });
-    </script>
 </body></html>
